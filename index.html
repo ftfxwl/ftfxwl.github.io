@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
 
@@ -62,10 +62,143 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-中职计算机应用专业模拟服务器架设过程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/16/hello-world/" class="article-date">
-  <time datetime="2019-08-16T09:01:53.243Z" itemprop="datePublished">2019-08-16</time>
+    <a href="/2019/07/24/中职计算机应用专业模拟服务器架设过程/" class="article-date">
+  <time datetime="2019-07-24T02:04:40.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/server/">server</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/中职计算机应用专业模拟服务器架设过程/">中职计算机应用专业模拟服务器架设过程-PVE虚拟机下安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="1、准备操作系统"><a href="#1、准备操作系统" class="headerlink" title="1、准备操作系统"></a>1、准备操作系统</h1><ol>
+<li><p>1 安装版本：Widnows Server 2008 R2</p>
+</li>
+<li><p>2 禁用 “密码必须符合复杂性要求”</p>
+<p>组策略：</p>
+<p>操作：运行-gpedit.msc-计算机配置-windows设置-安全设置-账户策略-密码策略-密码必须符合复杂性要求-已禁用）</p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/本地组策略编辑器.jpg" alt></p>
+</li>
+</ol>
+<h1 id="2、安装数据库"><a href="#2、安装数据库" class="headerlink" title="2、安装数据库"></a>2、安装数据库</h1><ol>
+<li><p>安装版本：SQL Server 2008R2（安装时注意：默认实例、混合登录）</p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql server 2008-1.jpg" alt></p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql server 2008-2.jpg" alt></p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql server 2008-3.jpg" alt></p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql server 2008-4.jpg" alt></p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql server 2008-5.jpg" alt></p>
+</li>
+<li><p>安装SQL MDO（对应操作系统位数32或64）</p>
+<p><img src="中职计算机应用专业模拟服务器架设过程/sql mdo.jpg" alt></p>
+</li>
+</ol>
+<h1 id="3、安装应用软件"><a href="#3、安装应用软件" class="headerlink" title="3、安装应用软件"></a>3、安装应用软件</h1><p>office 2010要完全安装；安装winrar；选择安装所要相应科目的应用软件（VC、VF等）。</p>
+<h1 id="4、授权写锁"><a href="#4、授权写锁" class="headerlink" title="4、授权写锁"></a>4、授权写锁</h1><ol>
+<li>安装常用组件</li>
+<li>注册组件（将相关dll文件复制到windows/syswow64目录下，运行注册）。</li>
+</ol>
+<h1 id="5、安装考试系统服务器"><a href="#5、安装考试系统服务器" class="headerlink" title="5、安装考试系统服务器"></a>5、安装考试系统服务器</h1><ol>
+<li>安装服务端（在C盘下会出现一个WLKS目录）</li>
+<li>安装软件更新</li>
+<li>还原数据库（需要安装dotnetfx45软件）</li>
+<li>设置授权服务自启动</li>
+<li>将6-WLKS压缩包解压，复制到相应目录下。</li>
+</ol>
+<h1 id="6、安装考试系统客户端"><a href="#6、安装考试系统客户端" class="headerlink" title="6、安装考试系统客户端"></a>6、安装考试系统客户端</h1><ol>
+<li>安装应用软件，如：office 2010、VC、VF等。</li>
+<li>安装客户端</li>
+<li>配置客户端</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/24/中职计算机应用专业模拟服务器架设过程/" data-id="cjzdwtv19000btou2bujjson5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Pve虚拟机使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/23/Pve虚拟机使用/" class="article-date">
+  <time datetime="2019-07-23T04:48:14.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/pve/">pve</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/Pve虚拟机使用/">Pve虚拟机使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
+<ol>
+<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
+<li>写盘工具：win32diskimager_0.9</li>
+</ol>
+<p>安装过程：（略）</p>
+<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
+<p>关键命令：在putty里输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img 104 vm-104-disk-1</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/23/Pve虚拟机使用/" data-id="cjzdwtv130003tou2hg8axyyt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-更换皮肤-3-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/20/更换皮肤-3-hexo/" class="article-date">
+  <time datetime="2019-07-20T12:27:00.000Z" itemprop="datePublished">2019-07-20</time>
 </a>
     
   </div>
@@ -76,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/07/20/更换皮肤-3-hexo/">更换皮肤 3-hexo</a>
     </h1>
   
 
@@ -84,26 +217,337 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<h2 id="换皮肤"><a href="#换皮肤" class="headerlink" title="换皮肤"></a>换皮肤</h2><p>如果觉的自带的皮肤太难看。可以根据以下步奏更换皮肤<br>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网</a> 可以查看各种各样的皮肤，挑选自己喜欢的皮肤</p>
+<p>这里以 <code>3-hexo</code> 这款皮肤为例（这款皮肤是笔者写的，效果可查看 <a href="http://yelog.org/" target="_blank" rel="noopener">yelog.org</a>）<br>1）进入皮肤的 <code>github</code> 官网，如<a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a>的网址<br>找到 <code>clone or download</code> ,复制它的url：<a href="https://github.com/yelog/hexo-theme-3-hexo.git" target="_blank" rel="noopener">https://github.com/yelog/hexo-theme-3-hexo.git</a></p>
+<p>2）进入 <code>myblog</code> 目录，打开 <code>git bash</code> 命令框，执行以下命令将皮肤下载到themes目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>3) 修改 <code>myblog/_config.yml</code> 中的 <code>theme: landscape</code> 为 <code>theme: 3-hexo</code></p>
+<blockquote>
+<p>如果使用 <code>3-hexo</code> 主题的话，还需要注意两点<br>①因为主题使用了自己的高亮效果，还需要修改 <code>highlight enable: true</code> 的 <code>true</code> 改为 <code>false</code>。<br>②由于主题启用了文章字数统计功能，需要安装一个插件，在 <code>myblog</code> 目录下，打开 <code>git bash</code> 命令框，执行 <code>npm i --save hexo-wordcount</code> 即可</p>
+</blockquote>
+<p>4) 重新渲染，启动服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/20/更换皮肤-3-hexo/" data-id="cjzdwtv240013tou22xipip89" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+    </footer>
+  </div>
+  
+</article>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+  
+    <article id="post-图片测试文" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/20/图片测试文/" class="article-date">
+  <time datetime="2019-07-20T03:19:40.000Z" itemprop="datePublished">2019-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/图片测试文/">图片测试文</a>
+    </h1>
+  
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><img src="图片测试文/全校教师合影.jpg" alt="全校教师合影"></p>
+<hr>
+<p><img src="http://www.587606.xyz:3800/uploads/big/d0b8f8a496b4821f723ece9a1c68fd29.JPG" alt><a href="http://www.587606.xyz:3800/uploads/big/d0b8f8a496b4821f723ece9a1c68fd29.JPG" target="_blank" rel="noopener">http://www.587606.xyz:3800/uploads/big/d0b8f8a496b4821f723ece9a1c68fd29.JPG</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/hello-world/" data-id="cjzdwpidn0000tku2qpd318rl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/20/图片测试文/" data-id="cjzdwtv1u000rtou276uoui8y" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2019暑假记事1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/17/2019暑假记事1/" class="article-date">
+  <time datetime="2019-07-17T07:26:19.000Z" itemprop="datePublished">2019-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/2019暑假记事1/">2019暑假记事1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>2019暑假如期而至。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/17/2019暑假记事1/" data-id="cjzdwtv0v0000tou2q9y7l2cb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-续网费" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/续网费/" class="article-date">
+  <time datetime="2019-07-08T02:27:19.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/08/续网费/">续网费</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/08/续网费/" data-id="cjzdwtv250015tou221nw1ap3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git-日常使用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/07/git-日常使用命令/" class="article-date">
+  <time datetime="2019-07-07T05:24:54.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/git-日常使用命令/">git 日常使用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/07/git-日常使用命令/" data-id="cjzdwtv140004tou24tsnj11k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于多机同步管理github下的hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/07/关于多机同步管理github下的hexo博客/" class="article-date">
+  <time datetime="2019-07-07T03:13:07.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/关于多机同步管理github下的hexo博客/">关于多机同步管理github下的hexo博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；</p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.gitgit submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github.com:username/username.github.io.git --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/07/关于多机同步管理github下的hexo博客/" data-id="cjzdwtv1c000ftou2rmggl0yj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-找回测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/05/找回测试/" class="article-date">
+  <time datetime="2019-07-05T10:35:08.000Z" itemprop="datePublished">2019-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/05/找回测试/">找回测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="能看到这段内容，说明博客找回成功啦！"><a href="#能看到这段内容，说明博客找回成功啦！" class="headerlink" title="能看到这段内容，说明博客找回成功啦！"></a>能看到这段内容，说明博客找回成功啦！</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/05/找回测试/" data-id="cjzdwtv230011tou2t4udyt93" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习php笔记1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/11/学习php笔记1/" class="article-date">
+  <time datetime="2019-06-11T02:36:13.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/11/学习php笔记1/">学习php笔记1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/11/学习php笔记1/" data-id="cjzdwtv1w000ttou2nst56kah" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
     </footer>
   </div>
   
@@ -113,23 +557,49 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/pve/">pve</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/server/">server</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -142,7 +612,23 @@
       <ul>
         
           <li>
-            <a href="/2019/08/16/hello-world/">Hello World</a>
+            <a href="/2019/07/24/中职计算机应用专业模拟服务器架设过程/">中职计算机应用专业模拟服务器架设过程-PVE虚拟机下安装</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/23/Pve虚拟机使用/">Pve虚拟机使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/更换皮肤-3-hexo/">更换皮肤 3-hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/图片测试文/">图片测试文</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/17/2019暑假记事1/">2019暑假记事1</a>
           </li>
         
       </ul>
