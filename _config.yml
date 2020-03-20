@@ -4,12 +4,12 @@
 
 # Site
 title: 非凡空间
-subtitle: 小白的技术成长之路
-description: 小白的技术成长之路
+subtitle: 记录生活中的点点滴滴
+description: 直到这一刻微笑着说话为止，我至少留下了一公升眼泪
 keywords:
-author:
+author: 万老师
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai #中国的时区，不要乱改城市
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
