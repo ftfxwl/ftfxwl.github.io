@@ -62,7 +62,7 @@ footer:
     color: "#808080"
 
   # If not defined, `author` from Hexo main config will be used.
-  copyright:
+  copyright: 老万
 
   powered:
     # Hexo link (Powered by Hexo).
