@@ -4,16 +4,16 @@
 
 # Site
 title: 非凡空间
-subtitle:
-description:
+subtitle: 小白的技术成长之路
+description: 小白的技术成长之路
 keywords:
-author: WinC
+author: 老万
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://ftfxwl.github.io/
 root: /
 permalink: :year/:month/:day/:title.html/
 permalink_defaults:
