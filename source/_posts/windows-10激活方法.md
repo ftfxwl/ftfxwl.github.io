@@ -6,7 +6,7 @@ tags: 随笔
 
 # 前言
 
-windows 10激活方法
+windows 10激活方法<!---more--->
 
 # 查看激活状态
 

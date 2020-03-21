@@ -7,7 +7,7 @@ tags: 随笔
 
  # 前言
 
-host文件更新，解决不能访问github问题。
+host文件更新，解决不能访问github问题。<!---more--->
 
 ------
 

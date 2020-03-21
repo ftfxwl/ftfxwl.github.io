@@ -6,7 +6,7 @@ date: 2019-04-12 07:50:45
 ---
 # 前言
 
-使用github pages服务搭建博客教程
+使用github pages服务搭建博客教程<!---more--->
 
 ### 使用github pages服务搭建博客的好处有：
 

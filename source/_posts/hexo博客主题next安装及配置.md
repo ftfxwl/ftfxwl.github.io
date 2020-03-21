@@ -7,7 +7,7 @@ categories: hexo
 
 # 前言
 
-hexo 博客主题next安装及配置方法
+hexo 博客主题next安装及配置方法<!---more--->
 
 # 安装
 

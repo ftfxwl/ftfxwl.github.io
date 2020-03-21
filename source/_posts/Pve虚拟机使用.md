@@ -9,7 +9,7 @@ categories: pve
 
 # 前言 
 
-Pve虚拟机简单使用。
+Pve虚拟机简单使用。<!---more--->
 
 # 一、Pve虚拟机安装
 
