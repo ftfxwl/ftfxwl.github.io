@@ -5,13 +5,17 @@ tags: 随笔
 categories: hexo
 ---
 
+# 前言
+
+hexo 博客主题next安装及配置方法
+
+<!---more--->
+
 # 安装
 
 在hexo博客主目录运行 Git bash，执行下列命令，下载安装next主题。
 
 > `$ git clone https://github.com/theme-next/hexo-theme-next themes/next`
-
-<!--more-->
 
 # 配置
 

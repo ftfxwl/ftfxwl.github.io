@@ -4,11 +4,17 @@ date: 2019-07-07 11:13:07
 tags: 随笔
 ---
 
+# 前言
+
+关于多机同下管理github下的hexo博客问题
+
+<!---more--->
+
 ## 一、关于搭建的流程
 
 1. 创建仓库，\< your github username >.github.io；可参考我的[tracy-talent.github.io](https://github.com/tracy-talent/tracy-talent.github.io)
 
-2. 创建两个分支：master 与 hexo； <!--more-->
+2. 创建两个分支：master 与 hexo；<!--more-->
 
 3. 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；
 
