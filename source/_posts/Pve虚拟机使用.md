@@ -11,8 +11,6 @@ categories: pve
 
 Pve虚拟机简单使用。
 
-<!---more--->
-
 # 一、Pve虚拟机安装
 
 工具准备：

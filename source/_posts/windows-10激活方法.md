@@ -8,8 +8,6 @@ tags: 随笔
 
 windows 10激活方法
 
-<!---more--->
-
 # 查看激活状态
 
 管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。

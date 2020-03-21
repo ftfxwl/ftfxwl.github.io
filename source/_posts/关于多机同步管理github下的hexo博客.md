@@ -8,8 +8,6 @@ tags: 随笔
 
 关于多机同下管理github下的hexo博客问题
 
-<!---more--->
-
 ## 一、关于搭建的流程
 
 1. 创建仓库，\< your github username >.github.io；可参考我的[tracy-talent.github.io](https://github.com/tracy-talent/tracy-talent.github.io)

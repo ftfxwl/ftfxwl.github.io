@@ -11,8 +11,6 @@ tags: hexo
 
 黑群晖下，如何搭建免费影视在线点播平台。
 
-<!---more--->
-
 ## 一、下载网站源码
 
 1. 下载苹果CMS网点平台源码：[苹果CMS官网](http://www.maccmsv10.com/)  [备用地址](https://www.lanzous.com/iadrj9i

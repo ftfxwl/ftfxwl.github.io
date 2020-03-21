@@ -10,8 +10,6 @@ categories: hexo
 
 将代码上传coding备份
 
-<!---more--->
-
 # 目的
 
 为了将博客的源文件放在coding.me上进行备份
