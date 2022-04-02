@@ -1,531 +1,567 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>多机同步管理hexo博客</title>
-      <link href="/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/"/>
-      <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol><li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p></li><li><p>创建两个分支：master 与 hexo；<a id="more"></a></p></li><li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p></li><li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p></li><li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p></li><li><p>修改_config.yml中的deploy参数，分支应为master；</p></li><li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p></li><li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p></li><li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p></li><li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure><p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p></li><li><p>执行hexo g -d生成网站并部署到GitHub上。</p></li></ol><p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p><h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p><ol><li>先git pull origin hexo同步远程仓库</li><li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li><li>然后才执行hexo g -d发布网站到master分支上。</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
-      <link href="/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/"/>
-      <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>黑群晖下，如何搭建免费影视在线点播平台。<a id="more"></a></p><h2 id="一、下载网站源码"><a href="#一、下载网站源码" class="headerlink" title="一、下载网站源码"></a>一、下载网站源码</h2><ol><li>下载苹果CMS网点平台源码：<a href="http://www.maccmsv10.com/" target="_blank" rel="noopener">苹果CMS官网</a>  <a href="https://www.lanzous.com/iadrj9i" target="_blank" rel="noopener">备用地址</a></li><li>萌芽采集插件：<a href="https://www.lanzous.com/iadya3a" target="_blank" rel="noopener">免费版3.0</a></li></ol><h2 id="二、群晖安装步骤"><a href="#二、群晖安装步骤" class="headerlink" title="二、群晖安装步骤"></a>二、群晖安装步骤</h2><ol><li>在群晖的web目录下新一个子目录（名字随意），然后，将苹果CMS源码上传到些目录下，解压。</li><li>将萌芽采集插件解压后，上传到addons目录下。</li><li>其他过程（略）</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>host文件更新，访问github</title>
-      <link href="/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/"/>
-      <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p><hr><h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p><h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p><p>cmd</p><p>ipconfig /flushdns</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>重新配置hexo，绑定花生壳域名</title>
-      <link href="/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/"/>
-      <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-      
-        <content type="html"><![CDATA[<hr><p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>战疫情，停课不停教</title>
-      <link href="/2020/03/05/%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E5%81%9C%E8%AF%BE%E4%B8%8D%E5%81%9C%E6%95%99.html/"/>
-      <url>/2020/03/05/%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E5%81%9C%E8%AF%BE%E4%B8%8D%E5%81%9C%E6%95%99.html/</url>
-      
-        <content type="html"><![CDATA[<hr><p>2020年3月2日，林口县职教中心正式对全校学生开始钉钉平台的线上授课，全体任课教师，积极准备，确保线上授课的效果。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>小五哥终于可以回家了</title>
-      <link href="/2020/01/12/%E5%B0%8F%E4%BA%94%E5%93%A5%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%AE%B6%E4%BA%86.html/"/>
-      <url>/2020/01/12/%E5%B0%8F%E4%BA%94%E5%93%A5%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%AE%B6%E4%BA%86.html/</url>
-      
-        <content type="html"><![CDATA[<hr><p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2020年第一文</title>
-      <link href="/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/"/>
-      <url>/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="车载大屏"><a href="#车载大屏" class="headerlink" title="车载大屏"></a>车载大屏</h1><p>刚刚去调试了下新安装的车载中控大屏，感觉不错。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C语言基础知识</title>
-      <link href="/2019/08/29/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html/"/>
-      <url>/2019/08/29/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识"></a>C语言基础知识</h1><h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><h2 id="一、C语言的数据类型"><a href="#一、C语言的数据类型" class="headerlink" title="一、C语言的数据类型"></a>一、C语言的数据类型</h2><p>计算机要处理的数据（包括数字、文字、符号、图形、音频、视频等）是以二进制的形式存放在内存中的；</p><p>我们将8个比特（Bit）称为一个字节（Byte），并将字节作为最小的可操作单元。</p><p>下面是最简单的整数为例，看看它是如何放到内存中去的。<a id="more"></a></p><h3 id="变量（Variable）"><a href="#变量（Variable）" class="headerlink" title="变量（Variable）"></a>变量（Variable）</h3><p>现实生活中我们会找一个小箱子来存放物品，一来显得不那么凌乱，二来方便以后找到。计算机也是这个道理，我们需要先在内存中找一块区域，规定用它来存放整数，并起一个好记的名字，方便以后查找。这块区域就是“小箱子”，我们可以把整数放进去了。</p><p>C语言中这样在内存中找一块区域：</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a<span class="comment">;</span></span><br></pre></td></tr></table></figure><p><code>int</code>又是一个新单词，它是 Integer 的简写，意思是整数。a 是我们给这块区域起的名字；当然也可以叫其他名字，例如 abc、mn123 等。 这个语句的意思是：在内存中找一块区域，命名为 a，用它来存放整数。</p><p>不过<code>int a;</code>仅仅是在内存中找了一块可以保存整数的区域，那么如何将 123、100、999 这样的数字放进去呢？ C语言中这样向内存中放整数：</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span> = <span class="number">123</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><p><code>=</code>  是一个新符号，它在数学中叫“等于号”，但在C语言中，这个过程叫做<strong>赋值</strong> 。赋值是指把数据放到内存的过程。</p><p>把上面的两个语句连起来：</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a<span class="comment">;</span></span><br><span class="line"><span class="attribute">a</span> = <span class="number">123</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><p>就把123放到了一块叫 a 的内存区域。也可以写成一个语句：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">int a</span> = 123;</span><br></pre></td></tr></table></figure><p>a 中的整数是可以更改的，更改的方式就是再次赋值，例如：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">int a</span> = 123;</span><br><span class="line"><span class="attribute">a</span> = 1000;</span><br><span class="line"><span class="attribute">a</span> = 9988;</span><br></pre></td></tr></table></figure><p>第二次赋值会把第一次的数据覆盖（擦除）掉，也就是说，a 中最后的什是9988，123、1000已经不存在了，再也找不回来了。</p><p>因为 a 的值可以改变，所以，我们给它起了一个形象的名字，叫做 <strong>变量</strong>。</p><p><code>int a;</code>创造了一个变量 a，我们把这个过程叫做<strong>变量定义</strong>。<code>a = 123;</code>把123交给变量 a，我们把这个过程叫做<strong>给变量赋值</strong> ；又因为是第一次赋值，也称<strong>变量的初始化</strong>，或者<strong>赋初值</strong>。</p><h3 id="数据类型（Data-Type）"><a href="#数据类型（Data-Type）" class="headerlink" title="数据类型（Data Type）"></a>数据类型（Data Type）</h3><p>顾名思义，数据类型用来说明数据的类型，确定了数据的解释方式，让计算机和程序员不会产生歧义。在C语言中，有多种数据类型，例如：</p><table><thead><tr><th>说明</th><th>字符开</th><th>短整型</th><th>整型</th><th>长整型</th><th>单精度浮点型</th><th>双数度浮点型</th><th>无类型</th></tr></thead><tbody><tr><td>数据类型</td><td>char</td><td>short</td><td>int</td><td>long</td><td>float</td><td>double</td><td>void</td></tr></tbody></table><h3 id="连续定义多个变量"><a href="#连续定义多个变量" class="headerlink" title="连续定义多个变量"></a>连续定义多个变量</h3><p>为了让程序的书写更加简洁，C语言支持多个变量的连续定义，例如：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">float</span> m = <span class="number">10.9</span>,n = <span class="number">20.56</span>;</span><br><span class="line"><span class="keyword">char</span> p,q = <span class="string">'@'</span>;</span><br></pre></td></tr></table></figure><h3 id="数据的长度（Length）"><a href="#数据的长度（Length）" class="headerlink" title="数据的长度（Length）"></a>数据的长度（Length）</h3><p>所谓数据长度（Length），是指数据占用多少个字节。占用的字节越多，能存储的数据就越多，对于数字来说，值就会更大，反之能存储的数据就有限。</p><p>数据类型除了指明数据的解释方式，还指明了数据的长度。因为在C语言中，每一种数据类型所占用的字节数都是固定的，知道了数据类型，也就知道了数据的长度。</p><table><thead><tr><th>说明</th><th>字符开</th><th>短整型</th><th>整型</th><th>长整型</th><th>单精度浮点型</th><th>双数度浮点型</th><th>无类型</th></tr></thead><tbody><tr><td>数据类型</td><td>char</td><td>short</td><td>int</td><td>long</td><td>float</td><td>double</td><td>void</td></tr><tr><td>长度</td><td>1</td><td>2</td><td>4</td><td>4</td><td>4</td><td>8</td></tr></tbody></table><h3 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h3><p>数据是放在内存中的，在内存中存取数据要明确三件事情：数据存储在哪里、数据的长度以及数据的处理方式。 </p><p>变量名不仅仅是为数据起了一个好记的名字，还告诉我们数据存储在哪里，使用数据时，只要提供变量名即可；而数据类型则指明了数据的长度和处理方式。所以诸如<code>int n;</code>、<code>char c;</code>、<code>float money;</code>这样的形式就确定了数据在内存中的所有要素。</p><h3 id="最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。"><a href="#最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。" class="headerlink" title="最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。"></a>最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。</h3><h2 id="二、C语句"><a href="#二、C语句" class="headerlink" title="二、C语句"></a>二、C语句</h2><p>C语句分为以下5类</p><ol><li><p>控制语句。用来完成一定的控制功能，C语言只有9种控制语句，它们的形式是：</p><ol><li>if()…else…（条件语句）</li><li>for()…（循环语句）</li><li>while()… （循环语句）</li><li>do…while() （循环语句）</li><li>continue （结束本次循环语句）</li><li>break （终止执行switch或循环语句）</li><li>switch （多分支选择语句）</li><li>return （从函数返回语句）</li><li>goto （转向语句，在结构化程序中基本不用goto语句）</li></ol></li><li><p>函数调用语句。函数调用语句由一个函数调用加一个分号构成，例如：</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(<span class="string">"This is a C statement."</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></li><li><p>表达式语句。表达式语句由一个表达式加一个分号构成，最典型的是由赋值表达式构成一个赋值语句。例如：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">a</span> = <span class="number">3</span></span><br></pre></td></tr></table></figure><p>是一个赋值表达式，而</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span> = <span class="number">3</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><p>是一个赋值语句。<strong>一个表达式的最后加一个分号就成了一个语句。</strong></p></li><li><p>空语句。下面是一个空语句</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;</span></span><br></pre></td></tr></table></figure><p>此语句只有一个分号，什么也不做。那它有什么用呢？可以用它来作为流程的转向点，也可以用来作为循环语句中的循环体。</p></li><li><p>复合语句。可以用{}把一些语句和声明括起来成为复合语句（又称语句块）。常用在if语句或循环语句中，此时程序需要执行一组语句。</p></li></ol><h3 id="最基本的语句——赋值语句"><a href="#最基本的语句——赋值语句" class="headerlink" title="最基本的语句——赋值语句"></a>最基本的语句——赋值语句</h3><p>下面规纳一下与赋值有关的一些问题。</p><ol><li><p>赋值运算符</p><p>赋值符号“=”就是赋值运算符，它的作用是将一个数据赋给一个变量。如<code>a = 3</code>的作用是执行一次赋值操作（或称赋值运算）。把常量3赋给变量a。也可以将一个表达式赋给一个变量。</p></li><li><p>复合的赋值运算符</p><p>在赋值符 “=”之前加上其他运算符，可以构成复合运算符，例如，可以有以下的复合赋值运算：</p><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a+=<span class="number">3</span>  等价于 a = a + <span class="number">3</span></span><br><span class="line"><span class="keyword">x</span>+=y+<span class="number">8</span>等价于 <span class="keyword">x</span> = <span class="keyword">x</span>*(y+<span class="number">8</span>)</span><br><span class="line"><span class="keyword">x</span>%=<span class="number">3</span>  等价于 <span class="keyword">x</span> = <span class="keyword">x</span> % <span class="number">3</span></span><br></pre></td></tr></table></figure></li><li><p>赋值表达式</p><p>前面介绍过，赋值语句是在赋值表达式的末尾加一个分号构成的。那么什么是赋值表达式呢？</p><p>由赋值运算符将一个变量和一个表达式连接起来的式子称为<strong>赋值表达式</strong>。它的一般形式为：</p><p><strong>变量     赋值运算符     表达式 </strong></p><p>赋值表达式的作用是将一个表达式的值赋给一个变量，因此赋值表达式具有计算和赋值的双重功能。</p></li><li><p>未完，待续。。。。。。。</p></li></ol>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>20190411记事</title>
+    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
+    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019暑假记事1</title>
+    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
+    <content><![CDATA[<hr>
+<p>2019暑假如期而至。。。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2020年第一文</title>
+    <url>/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/</url>
+    <content><![CDATA[<h1 id="车载大屏"><a href="#车载大屏" class="headerlink" title="车载大屏"></a>车载大屏</h1><p>刚刚去调试了下新安装的车载中控大屏，感觉不错。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言基础知识</title>
+    <url>/2019/08/29/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识"></a>C语言基础知识</h1><h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><h2 id="一、C语言的数据类型"><a href="#一、C语言的数据类型" class="headerlink" title="一、C语言的数据类型"></a>一、C语言的数据类型</h2><p>计算机要处理的数据（包括数字、文字、符号、图形、音频、视频等）是以二进制的形式存放在内存中的；</p>
+<p>我们将8个比特（Bit）称为一个字节（Byte），并将字节作为最小的可操作单元。</p>
+<p>下面是最简单的整数为例，看看它是如何放到内存中去的。<a id="more"></a></p>
+<h3 id="变量（Variable）"><a href="#变量（Variable）" class="headerlink" title="变量（Variable）"></a>变量（Variable）</h3><p>现实生活中我们会找一个小箱子来存放物品，一来显得不那么凌乱，二来方便以后找到。计算机也是这个道理，我们需要先在内存中找一块区域，规定用它来存放整数，并起一个好记的名字，方便以后查找。这块区域就是“小箱子”，我们可以把整数放进去了。</p>
+<p>C语言中这样在内存中找一块区域：</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">int a<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><code>int</code>又是一个新单词，它是 Integer 的简写，意思是整数。a 是我们给这块区域起的名字；当然也可以叫其他名字，例如 abc、mn123 等。 这个语句的意思是：在内存中找一块区域，命名为 a，用它来存放整数。</p>
+<p>不过<code>int a;</code>仅仅是在内存中找了一块可以保存整数的区域，那么如何将 123、100、999 这样的数字放进去呢？ C语言中这样向内存中放整数：</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">a</span> = <span class="number">123</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><code>=</code>  是一个新符号，它在数学中叫“等于号”，但在C语言中，这个过程叫做<strong>赋值</strong> 。赋值是指把数据放到内存的过程。</p>
+<p>把上面的两个语句连起来：</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">int a<span class="comment">;</span></span><br><span class="line"><span class="attribute">a</span> = <span class="number">123</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>就把123放到了一块叫 a 的内存区域。也可以写成一个语句：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">int a</span> = 123;</span><br></pre></td></tr></table></figure>
+<p>a 中的整数是可以更改的，更改的方式就是再次赋值，例如：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">int a</span> = 123;</span><br><span class="line"><span class="attribute">a</span> = 1000;</span><br><span class="line"><span class="attribute">a</span> = 9988;</span><br></pre></td></tr></table></figure>
+<p>第二次赋值会把第一次的数据覆盖（擦除）掉，也就是说，a 中最后的什是9988，123、1000已经不存在了，再也找不回来了。</p>
+<p>因为 a 的值可以改变，所以，我们给它起了一个形象的名字，叫做 <strong>变量</strong>。</p>
+<p><code>int a;</code>创造了一个变量 a，我们把这个过程叫做<strong>变量定义</strong>。<code>a = 123;</code>把123交给变量 a，我们把这个过程叫做<strong>给变量赋值</strong> ；又因为是第一次赋值，也称<strong>变量的初始化</strong>，或者<strong>赋初值</strong>。</p>
+<h3 id="数据类型（Data-Type）"><a href="#数据类型（Data-Type）" class="headerlink" title="数据类型（Data Type）"></a>数据类型（Data Type）</h3><p>顾名思义，数据类型用来说明数据的类型，确定了数据的解释方式，让计算机和程序员不会产生歧义。在C语言中，有多种数据类型，例如：</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>字符开</th>
+<th>短整型</th>
+<th>整型</th>
+<th>长整型</th>
+<th>单精度浮点型</th>
+<th>双数度浮点型</th>
+<th>无类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据类型</td>
+<td>char</td>
+<td>short</td>
+<td>int</td>
+<td>long</td>
+<td>float</td>
+<td>double</td>
+<td>void</td>
+</tr>
+</tbody>
+</table>
+<h3 id="连续定义多个变量"><a href="#连续定义多个变量" class="headerlink" title="连续定义多个变量"></a>连续定义多个变量</h3><p>为了让程序的书写更加简洁，C语言支持多个变量的连续定义，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">float</span> m = <span class="number">10.9</span>,n = <span class="number">20.56</span>;</span><br><span class="line"><span class="keyword">char</span> p,q = <span class="string">'@'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="数据的长度（Length）"><a href="#数据的长度（Length）" class="headerlink" title="数据的长度（Length）"></a>数据的长度（Length）</h3><p>所谓数据长度（Length），是指数据占用多少个字节。占用的字节越多，能存储的数据就越多，对于数字来说，值就会更大，反之能存储的数据就有限。</p>
+<p>数据类型除了指明数据的解释方式，还指明了数据的长度。因为在C语言中，每一种数据类型所占用的字节数都是固定的，知道了数据类型，也就知道了数据的长度。</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>字符开</th>
+<th>短整型</th>
+<th>整型</th>
+<th>长整型</th>
+<th>单精度浮点型</th>
+<th>双数度浮点型</th>
+<th>无类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据类型</td>
+<td>char</td>
+<td>short</td>
+<td>int</td>
+<td>long</td>
+<td>float</td>
+<td>double</td>
+<td>void</td>
+</tr>
+<tr>
+<td>长度</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h3><p>数据是放在内存中的，在内存中存取数据要明确三件事情：数据存储在哪里、数据的长度以及数据的处理方式。 </p>
+<p>变量名不仅仅是为数据起了一个好记的名字，还告诉我们数据存储在哪里，使用数据时，只要提供变量名即可；而数据类型则指明了数据的长度和处理方式。所以诸如<code>int n;</code>、<code>char c;</code>、<code>float money;</code>这样的形式就确定了数据在内存中的所有要素。</p>
+<h3 id="最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。"><a href="#最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。" class="headerlink" title="最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。"></a>最后需要说明的是：数据类型只在定义变量时指明，而且必须指明；使用变量时无需再指明，因为此时的数据类型已经确定了。</h3><h2 id="二、C语句"><a href="#二、C语句" class="headerlink" title="二、C语句"></a>二、C语句</h2><p>C语句分为以下5类</p>
+<ol>
+<li><p>控制语句。用来完成一定的控制功能，C语言只有9种控制语句，它们的形式是：</p>
+<ol>
+<li>if()…else…（条件语句）</li>
+<li>for()…（循环语句）</li>
+<li>while()… （循环语句）</li>
+<li>do…while() （循环语句）</li>
+<li>continue （结束本次循环语句）</li>
+<li>break （终止执行switch或循环语句）</li>
+<li>switch （多分支选择语句）</li>
+<li>return （从函数返回语句）</li>
+<li>goto （转向语句，在结构化程序中基本不用goto语句）</li>
+</ol>
+</li>
+<li><p>函数调用语句。函数调用语句由一个函数调用加一个分号构成，例如：</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">printf(<span class="string">"This is a C statement."</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表达式语句。表达式语句由一个表达式加一个分号构成，最典型的是由赋值表达式构成一个赋值语句。例如：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">a</span> = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>是一个赋值表达式，而</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">a</span> = <span class="number">3</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>是一个赋值语句。<strong>一个表达式的最后加一个分号就成了一个语句。</strong></p>
+</li>
+<li><p>空语句。下面是一个空语句</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>此语句只有一个分号，什么也不做。那它有什么用呢？可以用它来作为流程的转向点，也可以用来作为循环语句中的循环体。</p>
+</li>
+<li><p>复合语句。可以用{}把一些语句和声明括起来成为复合语句（又称语句块）。常用在if语句或循环语句中，此时程序需要执行一组语句。</p>
+</li>
+</ol>
+<h3 id="最基本的语句——赋值语句"><a href="#最基本的语句——赋值语句" class="headerlink" title="最基本的语句——赋值语句"></a>最基本的语句——赋值语句</h3><p>下面规纳一下与赋值有关的一些问题。</p>
+<ol>
+<li><p>赋值运算符</p>
+<p>赋值符号“=”就是赋值运算符，它的作用是将一个数据赋给一个变量。如<code>a = 3</code>的作用是执行一次赋值操作（或称赋值运算）。把常量3赋给变量a。也可以将一个表达式赋给一个变量。</p>
+</li>
+<li><p>复合的赋值运算符</p>
+<p>在赋值符 “=”之前加上其他运算符，可以构成复合运算符，例如，可以有以下的复合赋值运算：</p>
+<figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">a+=<span class="number">3</span>  等价于 a = a + <span class="number">3</span></span><br><span class="line"><span class="keyword">x</span>+=y+<span class="number">8</span>等价于 <span class="keyword">x</span> = <span class="keyword">x</span>*(y+<span class="number">8</span>)</span><br><span class="line"><span class="keyword">x</span>%=<span class="number">3</span>  等价于 <span class="keyword">x</span> = <span class="keyword">x</span> % <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋值表达式</p>
+<p>前面介绍过，赋值语句是在赋值表达式的末尾加一个分号构成的。那么什么是赋值表达式呢？</p>
+<p>由赋值运算符将一个变量和一个表达式连接起来的式子称为<strong>赋值表达式</strong>。它的一般形式为：</p>
+<p><strong>变量     赋值运算符     表达式 </strong></p>
+<p>赋值表达式的作用是将一个表达式的值赋给一个变量，因此赋值表达式具有计算和赋值的双重功能。</p>
+</li>
+<li><p>未完，待续。。。。。。。</p>
+</li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> C笔记 </category>
-          
+        <category>C笔记</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>将代码上传coding备份</title>
-      <link href="/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/"/>
-      <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p><h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p><h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pve虚拟机使用</title>
+    <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p>
+<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
+<ol>
+<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
+<li>写盘工具：win32diskimager_0.9</li>
+</ol>
+<p>安装过程：（略）</p>
+<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
+<p>关键命令：在putty里输入</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>pve</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>异地多机多平台同步管理hexo</title>
-      <link href="/2019/08/17/%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo.html/"/>
-      <url>/2019/08/17/%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p>为了方便单位和家同步管理hexo，进行分机设置。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>中职计算机应用专业模拟服务器架设过程-PVE虚拟机下安装</title>
-      <link href="/2019/07/24/%E4%B8%AD%E8%81%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E4%B8%93%E4%B8%9A%E6%A8%A1%E6%8B%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BE%E8%BF%87%E7%A8%8B.html/"/>
-      <url>/2019/07/24/%E4%B8%AD%E8%81%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E4%B8%93%E4%B8%9A%E6%A8%A1%E6%8B%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BE%E8%BF%87%E7%A8%8B.html/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="中职计算机应用专业模拟服务器架设过程"><a href="#中职计算机应用专业模拟服务器架设过程" class="headerlink" title="中职计算机应用专业模拟服务器架设过程"></a>中职计算机应用专业模拟服务器架设过程</h1><h1 id="1、准备操作系统"><a href="#1、准备操作系统" class="headerlink" title="1、准备操作系统"></a>1、准备操作系统</h1><ol><li><p>1 安装版本：Widnows Server 2008 R2</p></li><li><p>2 禁用 “密码必须符合复杂性要求”<a id="more"></a></p><p>组策略：</p><p>操作：运行-gpedit.msc-计算机配置-windows设置-安全设置-账户策略-密码策略-密码必须符合复杂性要求-已禁用）</p><p><img src="http://587606.xyz:2022/2022/04/02/b94d83da790d5.jpg" alt></p></li></ol><h1 id="2、安装数据库"><a href="#2、安装数据库" class="headerlink" title="2、安装数据库"></a>2、安装数据库</h1><ol><li><p>安装版本：SQL Server 2008R2（安装时注意：默认实例、混合登录）</p><p><img src="http://587606.xyz:2022/2022/04/02/4c6a43e0c6116.jpg" alt></p><p><img src="http://587606.xyz:2022/2022/04/02/01edc7cc1c627.jpg" alt></p><p><img src="http://587606.xyz:2022/2022/04/02/456473a0ca4c9.jpg" alt></p><p><img src="http://587606.xyz:2022/2022/04/02/9663f85755a8b.jpg" alt></p><p><img src="http://587606.xyz:2022/2022/04/02/28ec521eb7413.jpg" alt></p></li><li><p>安装SQL MDO（对应操作系统位数32或64）</p><p><img src="http://587606.xyz:2022/2022/04/02/15a95fb238b61.jpg" alt></p></li></ol><h1 id="3、安装应用软件"><a href="#3、安装应用软件" class="headerlink" title="3、安装应用软件"></a>3、安装应用软件</h1><p>office 2010要完全安装；安装winrar；选择安装所要相应科目的应用软件（VC、VF等）。</p><h1 id="4、授权写锁"><a href="#4、授权写锁" class="headerlink" title="4、授权写锁"></a>4、授权写锁</h1><ol><li>安装常用组件</li><li>注册组件（将相关dll文件复制到windows/syswow64目录下，运行注册）。</li></ol><h1 id="5、安装考试系统服务器"><a href="#5、安装考试系统服务器" class="headerlink" title="5、安装考试系统服务器"></a>5、安装考试系统服务器</h1><ol><li>安装服务端（在C盘下会出现一个WLKS目录）</li><li>安装软件更新</li><li>还原数据库（需要安装dotnetfx45软件）</li><li>设置授权服务自启动</li><li>将6-WLKS压缩包解压，复制到相应目录下。</li></ol><h1 id="6、安装考试系统客户端"><a href="#6、安装考试系统客户端" class="headerlink" title="6、安装考试系统客户端"></a>6、安装考试系统客户端</h1><ol><li>安装应用软件，如：office 2010、VC、VF等。</li><li>安装客户端</li><li>配置客户端</li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git 日常使用命令</title>
+    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
+    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将代码上传coding备份</title>
+    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
+<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
+]]></content>
       <categories>
-          
-          <category> server </category>
-          
+        <category>hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Pve虚拟机使用</title>
-      <link href="/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/"/>
-      <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p><h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p><ol><li>Pve虚拟镜像：proxmox-ve_5.3-2</li><li>写盘工具：win32diskimager_0.9</li></ol><p>安装过程：（略）</p><h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p><p>关键命令：在putty里输入</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客主题next安装及配置</title>
+    <url>/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hexo 博客主题next安装及配置方法<a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在hexo博客主目录运行 Git bash，执行下列命令，下载安装next主题。</p>
+<blockquote>
+<p><code>$ git clone https://github.com/theme-next/hexo-theme-next themes/next</code></p>
+</blockquote>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>hexo配置有两个<em>config.yml文件，一个是主目录下的，一个是theme主题目录下的。</em></p>
+<h2 id="博客语言"><a href="#博客语言" class="headerlink" title="博客语言"></a>博客语言</h2><p>_安装next主题后，首先查看next目录下的languages文件夹下的简体中文文件名是什么，如zh-CN.yml，然后，将此名字填入主目录下的_config.yml文件中的language: 位置上，使得next主题支持简体中文。</p>
+<h2 id="next-主题类型选择"><a href="#next-主题类型选择" class="headerlink" title="next 主题类型选择"></a>next 主题类型选择</h2><blockquote>
+<p>Schemes</p>
+<p>#scheme: Muse</p>
+<p>#scheme: Mist</p>
+<p>#scheme: Pisces<br>scheme: Gemini</p>
+</blockquote>
+<p>选用哪个主题类型，即将其前面的#去掉即可。</p>
+]]></content>
       <categories>
-          
-          <category> pve </category>
-          
+        <category>hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2019暑假记事1</title>
-      <link href="/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/"/>
-      <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
-      
-        <content type="html"><![CDATA[<hr><p>2019暑假如期而至。。。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>续网费</title>
-      <link href="/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/"/>
-      <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git 日常使用命令</title>
-      <link href="/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/"/>
-      <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol><li>先git pull origin hexo同步远程仓库</li><li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li><li>然后才执行hexo g -d发布网站到master分支上。</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于多机同步管理github下的hexo博客</title>
-      <link href="/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/"/>
-      <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p><h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol><li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p></li><li><p>创建两个分支：master 与 hexo；<!--more--></p></li><li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p></li><li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p></li><li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p></li><li><p>修改_config.yml中的deploy参数，分支应为master；</p></li><li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p></li><li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p></li><li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p></li><li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure><p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p></li><li><p>执行hexo g -d生成网站并部署到GitHub上。</p></li></ol><p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p><h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p><ol><li>先git pull origin hexo同步远程仓库</li><li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li><li>然后才执行hexo g -d发布网站到master分支上。</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>学习php笔记1</title>
-      <link href="/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/"/>
-      <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>windows 10激活方法</title>
-      <link href="/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/"/>
-      <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p><h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p><h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol><li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li></ol><p>回车，提示成功安装了产品密钥。</p><ol start="2"><li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li><li>输入slmgr /ato激活命令，提示激活成功。</li><li>输入slmgr.vbs -xpr查看是否永久激活。</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>解决浪潮服务器启动小白屏问题</title>
-      <link href="/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/"/>
-      <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p><h1 id="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"><a href="#问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动" class="headerlink" title="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"></a>问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动</h1><p>在原来的系统基础上，安装了Hy虚拟机角色，系统重启出现以上代码提示。</p><h1 id="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"><a href="#原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。" class="headerlink" title="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"></a>原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。</h1><h1 id="解决：通过百度查找问题代码，找到解决方法"><a href="#解决：通过百度查找问题代码，找到解决方法" class="headerlink" title="解决：通过百度查找问题代码，找到解决方法"></a>解决：通过百度查找问题代码，找到解决方法</h1><p>出现0x0000005c蓝屏错误，确定是由x2APIC造成的，进入BIOS的CPU设置选项中，将x2APIC选项设置为disable。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hexo博客主题next安装及配置</title>
-      <link href="/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/"/>
-      <url>/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hexo 博客主题next安装及配置方法<a id="more"></a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在hexo博客主目录运行 Git bash，执行下列命令，下载安装next主题。</p><blockquote><p><code>$ git clone https://github.com/theme-next/hexo-theme-next themes/next</code></p></blockquote><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>hexo配置有两个<em>config.yml文件，一个是主目录下的，一个是theme主题目录下的。</em></p><h2 id="博客语言"><a href="#博客语言" class="headerlink" title="博客语言"></a>博客语言</h2><p>_安装next主题后，首先查看next目录下的languages文件夹下的简体中文文件名是什么，如zh-CN.yml，然后，将此名字填入主目录下的_config.yml文件中的language: 位置上，使得next主题支持简体中文。</p><h2 id="next-主题类型选择"><a href="#next-主题类型选择" class="headerlink" title="next 主题类型选择"></a>next 主题类型选择</h2><blockquote><p>Schemes</p><p>#scheme: Muse</p><p>#scheme: Mist</p><p>#scheme: Pisces<br>scheme: Gemini</p></blockquote><p>选用哪个主题类型，即将其前面的#去掉即可。</p>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>host文件更新，访问github</title>
+    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
+<hr>
+<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
+<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
+<p>cmd</p>
+<p>ipconfig /flushdns</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows 10激活方法</title>
+    <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
+<h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p>
+<h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol>
+<li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li>
+</ol>
+<p>回车，提示成功安装了产品密钥。</p>
+<ol start="2">
+<li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li>
+<li>输入slmgr /ato激活命令，提示激活成功。</li>
+<li>输入slmgr.vbs -xpr查看是否永久激活。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中职计算机应用专业模拟服务器架设过程-PVE虚拟机下安装</title>
+    <url>/2019/07/24/%E4%B8%AD%E8%81%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E4%B8%93%E4%B8%9A%E6%A8%A1%E6%8B%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BE%E8%BF%87%E7%A8%8B.html/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="中职计算机应用专业模拟服务器架设过程"><a href="#中职计算机应用专业模拟服务器架设过程" class="headerlink" title="中职计算机应用专业模拟服务器架设过程"></a>中职计算机应用专业模拟服务器架设过程</h1><h1 id="1、准备操作系统"><a href="#1、准备操作系统" class="headerlink" title="1、准备操作系统"></a>1、准备操作系统</h1><ol>
+<li><p>1 安装版本：Widnows Server 2008 R2</p>
+</li>
+<li><p>2 禁用 “密码必须符合复杂性要求”<a id="more"></a></p>
+<p>组策略：</p>
+<p>操作：运行-gpedit.msc-计算机配置-windows设置-安全设置-账户策略-密码策略-密码必须符合复杂性要求-已禁用）</p>
+<p><img src="http://587606.xyz:2022/2022/04/02/b94d83da790d5.jpg" alt></p>
+</li>
+</ol>
+<h1 id="2、安装数据库"><a href="#2、安装数据库" class="headerlink" title="2、安装数据库"></a>2、安装数据库</h1><ol>
+<li><p>安装版本：SQL Server 2008R2（安装时注意：默认实例、混合登录）</p>
+<p><img src="http://587606.xyz:2022/2022/04/02/4c6a43e0c6116.jpg" alt></p>
+<p><img src="http://587606.xyz:2022/2022/04/02/01edc7cc1c627.jpg" alt></p>
+<p><img src="http://587606.xyz:2022/2022/04/02/456473a0ca4c9.jpg" alt></p>
+<p><img src="http://587606.xyz:2022/2022/04/02/9663f85755a8b.jpg" alt></p>
+<p><img src="http://587606.xyz:2022/2022/04/02/28ec521eb7413.jpg" alt></p>
+</li>
+<li><p>安装SQL MDO（对应操作系统位数32或64）</p>
+<p><img src="http://587606.xyz:2022/2022/04/02/15a95fb238b61.jpg" alt></p>
+</li>
+</ol>
+<h1 id="3、安装应用软件"><a href="#3、安装应用软件" class="headerlink" title="3、安装应用软件"></a>3、安装应用软件</h1><p>office 2010要完全安装；安装winrar；选择安装所要相应科目的应用软件（VC、VF等）。</p>
+<h1 id="4、授权写锁"><a href="#4、授权写锁" class="headerlink" title="4、授权写锁"></a>4、授权写锁</h1><ol>
+<li>安装常用组件</li>
+<li>注册组件（将相关dll文件复制到windows/syswow64目录下，运行注册）。</li>
+</ol>
+<h1 id="5、安装考试系统服务器"><a href="#5、安装考试系统服务器" class="headerlink" title="5、安装考试系统服务器"></a>5、安装考试系统服务器</h1><ol>
+<li>安装服务端（在C盘下会出现一个WLKS目录）</li>
+<li>安装软件更新</li>
+<li>还原数据库（需要安装dotnetfx45软件）</li>
+<li>设置授权服务自启动</li>
+<li>将6-WLKS压缩包解压，复制到相应目录下。</li>
+</ol>
+<h1 id="6、安装考试系统客户端"><a href="#6、安装考试系统客户端" class="headerlink" title="6、安装考试系统客户端"></a>6、安装考试系统客户端</h1><ol>
+<li>安装应用软件，如：office 2010、VC、VF等。</li>
+<li>安装客户端</li>
+<li>配置客户端</li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>server</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>解决黑群晖SSH无法启动故障</title>
-      <link href="/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/"/>
-      <url>/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决黑群晖SSH无法启动故障<a id="more"></a></p><h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><ul><li>黑群晖ssh服务无法启动</li><li>手动开关服务，故障依然存在</li></ul><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><!--more--><ul><li>为了改变root的登陆权限，修改了ssh的相关配置文件，导致ssh服务无法正常开启</li></ul><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ul><li>在windows 7系统下，用telnet 登陆群晖主机，将ssh默认的配置文件恢复，问题解决</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>本机无法访问 ghithub.io问题分析</title>
-      <link href="/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/"/>
-      <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p><h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>浏览器扩展Synology Download Manager</title>
-      <link href="/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/"/>
-      <url>/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浏览器扩展 synology Download Manager安装<a id="more"></a></p><p>分别在Firefox和Opera浏览器中，测试了Synology Download Manager插件，确实好用，可以把下载任务直接添加到群晖的Download套件里。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>使用hexo-github搭建免费个个博客详细教程</title>
-      <link href="/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/"/>
-      <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p><h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>20190411记事</title>
-      <link href="/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/"/>
-      <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
-      
-        <content type="html"><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>安装记录</title>
-      <link href="/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/"/>
-      <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
-      
-        <content type="html"><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo-github搭建免费个个博客详细教程</title>
+    <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
+<h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于多机同步管理github下的hexo博客</title>
+    <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
+<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；<!--more--></p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多机同步管理hexo博客</title>
+    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习php笔记1</title>
+    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
+    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小五哥终于可以回家了</title>
+    <url>/2020/01/12/%E5%B0%8F%E4%BA%94%E5%93%A5%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%AE%B6%E4%BA%86.html/</url>
+    <content><![CDATA[<hr>
+<p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>异地多机多平台同步管理hexo</title>
+    <url>/2019/08/17/%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo.html/</url>
+    <content><![CDATA[<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p>为了方便单位和家同步管理hexo，进行分机设置。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装记录</title>
+    <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
+    <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>战疫情，停课不停教</title>
+    <url>/2020/03/05/%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E5%81%9C%E8%AF%BE%E4%B8%8D%E5%81%9C%E6%95%99.html/</url>
+    <content><![CDATA[<hr>
+<p>2020年3月2日，林口县职教中心正式对全校学生开始钉钉平台的线上授课，全体任课教师，积极准备，确保线上授课的效果。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本机无法访问 ghithub.io问题分析</title>
+    <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p>
+<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>续网费</title>
+    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
+    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决浪潮服务器启动小白屏问题</title>
+    <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p>
+<h1 id="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"><a href="#问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动" class="headerlink" title="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"></a>问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动</h1><p>在原来的系统基础上，安装了Hy虚拟机角色，系统重启出现以上代码提示。</p>
+<h1 id="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"><a href="#原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。" class="headerlink" title="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"></a>原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。</h1><h1 id="解决：通过百度查找问题代码，找到解决方法"><a href="#解决：通过百度查找问题代码，找到解决方法" class="headerlink" title="解决：通过百度查找问题代码，找到解决方法"></a>解决：通过百度查找问题代码，找到解决方法</h1><p>出现0x0000005c蓝屏错误，确定是由x2APIC造成的，进入BIOS的CPU设置选项中，将x2APIC选项设置为disable。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器扩展Synology Download Manager</title>
+    <url>/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浏览器扩展 synology Download Manager安装<a id="more"></a></p>
+<p>分别在Firefox和Opera浏览器中，测试了Synology Download Manager插件，确实好用，可以把下载任务直接添加到群晖的Download套件里。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决黑群晖SSH无法启动故障</title>
+    <url>/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决黑群晖SSH无法启动故障<a id="more"></a></p>
+<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><ul>
+<li>黑群晖ssh服务无法启动</li>
+<li>手动开关服务，故障依然存在</li>
+</ul>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><!--more-->
+<ul>
+<li>为了改变root的登陆权限，修改了ssh的相关配置文件，导致ssh服务无法正常开启</li>
+</ul>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ul>
+<li>在windows 7系统下，用telnet 登陆群晖主机，将ssh默认的配置文件恢复，问题解决</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
+    <content><![CDATA[<hr>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
+    <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>黑群晖下，如何搭建免费影视在线点播平台。<a id="more"></a></p>
+<h2 id="一、下载网站源码"><a href="#一、下载网站源码" class="headerlink" title="一、下载网站源码"></a>一、下载网站源码</h2><ol>
+<li>下载苹果CMS网点平台源码：<a href="http://www.maccmsv10.com/" target="_blank" rel="noopener">苹果CMS官网</a>  <a href="https://www.lanzous.com/iadrj9i" target="_blank" rel="noopener">备用地址</a></li>
+<li>萌芽采集插件：<a href="https://www.lanzous.com/iadya3a" target="_blank" rel="noopener">免费版3.0</a></li>
+</ol>
+<h2 id="二、群晖安装步骤"><a href="#二、群晖安装步骤" class="headerlink" title="二、群晖安装步骤"></a>二、群晖安装步骤</h2><ol>
+<li>在群晖的web目录下新一个子目录（名字随意），然后，将苹果CMS源码上传到些目录下，解压。</li>
+<li>将萌芽采集插件解压后，上传到addons目录下。</li>
+<li>其他过程（略）</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
 </search>
