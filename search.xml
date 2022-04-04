@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2019暑假记事1</title>
-    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
-    <content><![CDATA[<hr>
-<p>2019暑假如期而至。。。</p>
+    <title>20190411记事</title>
+    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
+    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
-    <title>20190411记事</title>
-    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
-    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
+    <title>2019暑假记事1</title>
+    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
+    <content><![CDATA[<hr>
+<p>2019暑假如期而至。。。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -198,6 +198,19 @@
       </tags>
   </entry>
   <entry>
+    <title>git 日常使用命令</title>
+    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
+    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>将代码上传coding备份</title>
     <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
@@ -207,19 +220,6 @@
       <categories>
         <category>hexo</category>
       </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git 日常使用命令</title>
-    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
-    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
-<li>先git pull origin hexo同步远程仓库</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
@@ -333,6 +333,24 @@
       </tags>
   </entry>
   <entry>
+    <title>代码双分去管理测试</title>
+    <url>/2022/04/03/%E4%BB%A3%E7%A0%81%E5%8F%8C%E5%88%86%E5%8E%BB%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95.html/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo-github搭建免费个个博客详细教程</title>
+    <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
+<h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于多机同步管理github下的hexo博客</title>
     <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
@@ -369,16 +387,6 @@
 <li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
 <li>然后才执行hexo g -d发布网站到master分支上。</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo-github搭建免费个个博客详细教程</title>
-    <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
-<h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -538,17 +546,6 @@
       </tags>
   </entry>
   <entry>
-    <title>重新配置hexo，绑定花生壳域名</title>
-    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-    <content><![CDATA[<hr>
-<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
     <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
     <content><![CDATA[<hr>
@@ -565,6 +562,17 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
+    <content><![CDATA[<hr>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
