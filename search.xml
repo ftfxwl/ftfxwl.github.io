@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>20190411记事</title>
+    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
+    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2019暑假记事1</title>
     <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
     <content><![CDATA[<hr>
@@ -241,6 +250,20 @@
       </tags>
   </entry>
   <entry>
+    <title>host文件更新，访问github</title>
+    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
+<hr>
+<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
+<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
+<p>cmd</p>
+<p>ipconfig /flushdns</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows 10激活方法</title>
     <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
@@ -254,20 +277,6 @@
 <li>输入slmgr /ato激活命令，提示激活成功。</li>
 <li>输入slmgr.vbs -xpr查看是否永久激活。</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>host文件更新，访问github</title>
-    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
-<hr>
-<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
-<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
-<p>cmd</p>
-<p>ipconfig /flushdns</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -319,47 +328,6 @@
       <categories>
         <category>server</category>
       </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多机同步管理hexo博客</title>
-    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
-    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
-<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
-</li>
-<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
-</li>
-<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
-</li>
-<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
-</li>
-<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
-</li>
-<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
-</li>
-<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
-</li>
-<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
-<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
-</li>
-<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
-</li>
-</ol>
-<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
-<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>先git pull origin hexo同步远程仓库</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
@@ -417,18 +385,50 @@
       </tags>
   </entry>
   <entry>
-    <title>学习php笔记1</title>
-    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
-    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>多机同步管理hexo博客</title>
+    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
 ]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
-    <title>安装记录</title>
-    <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
-    <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
+    <title>学习php笔记1</title>
+    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
+    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -440,6 +440,15 @@
     <content><![CDATA[<hr>
 <p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p>
 <hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装记录</title>
+    <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
+    <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -489,6 +498,15 @@
       </tags>
   </entry>
   <entry>
+    <title>续网费</title>
+    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
+    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决浪潮服务器启动小白屏问题</title>
     <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p>
@@ -520,35 +538,6 @@
       </tags>
   </entry>
   <entry>
-    <title>续网费</title>
-    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
-    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20190411记事</title>
-    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
-    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>重新配置hexo，绑定花生壳域名</title>
-    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-    <content><![CDATA[<hr>
-<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
     <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
     <content><![CDATA[<hr>
@@ -565,6 +554,17 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
+    <content><![CDATA[<hr>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
