@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>20190411记事</title>
-    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
-    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2019暑假记事1</title>
-    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
-    <content><![CDATA[<hr>
-<p>2019暑假如期而至。。。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言基础知识</title>
     <url>/2019/08/29/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识"></a>C语言基础知识</h1><h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><h2 id="一、C语言的数据类型"><a href="#一、C语言的数据类型" class="headerlink" title="一、C语言的数据类型"></a>一、C语言的数据类型</h2><p>计算机要处理的数据（包括数字、文字、符号、图形、音频、视频等）是以二进制的形式存放在内存中的；</p>
@@ -167,15 +148,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2020年第一文</title>
-    <url>/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/</url>
-    <content><![CDATA[<h1 id="车载大屏"><a href="#车载大屏" class="headerlink" title="车载大屏"></a>车载大屏</h1><p>刚刚去调试了下新安装的车载中控大屏，感觉不错。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pve虚拟机使用</title>
     <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
     <content><![CDATA[<hr>
@@ -198,6 +170,29 @@
       </tags>
   </entry>
   <entry>
+    <title>将代码上传coding备份</title>
+    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
+<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>20190411记事</title>
+    <url>/2019/04/11/20190411%E8%AE%B0%E4%BA%8B.html/</url>
+    <content><![CDATA[<p>移动公司将外网线接入进来，测试了下网速，还可以。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git 日常使用命令</title>
     <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
     <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
@@ -211,15 +206,20 @@
       </tags>
   </entry>
   <entry>
-    <title>将代码上传coding备份</title>
-    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
-<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
+    <title>2019暑假记事1</title>
+    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
+    <content><![CDATA[<hr>
+<p>2019暑假如期而至。。。</p>
 ]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2020年第一文</title>
+    <url>/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/</url>
+    <content><![CDATA[<h1 id="车载大屏"><a href="#车载大屏" class="headerlink" title="车载大屏"></a>车载大屏</h1><p>刚刚去调试了下新安装的车载中控大屏，感觉不错。</p>
+]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
@@ -333,14 +333,6 @@
       </tags>
   </entry>
   <entry>
-    <title>代码双分去管理测试</title>
-    <url>/2022/04/03/%E4%BB%A3%E7%A0%81%E5%8F%8C%E5%88%86%E5%8E%BB%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95.html/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用hexo-github搭建免费个个博客详细教程</title>
     <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
@@ -434,15 +426,6 @@
       </tags>
   </entry>
   <entry>
-    <title>学习php笔记1</title>
-    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
-    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装记录</title>
     <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
     <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
@@ -457,6 +440,15 @@
     <content><![CDATA[<hr>
 <p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p>
 <hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习php笔记1</title>
+    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
+    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -485,17 +477,6 @@
       </tags>
   </entry>
   <entry>
-    <title>本机无法访问 ghithub.io问题分析</title>
-    <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p>
-<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>浏览器扩展Synology Download Manager</title>
     <url>/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浏览器扩展 synology Download Manager安装<a id="more"></a></p>
@@ -509,6 +490,17 @@
     <title>续网费</title>
     <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
     <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本机无法访问 ghithub.io问题分析</title>
+    <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p>
+<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -546,6 +538,17 @@
       </tags>
   </entry>
   <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
+    <content><![CDATA[<hr>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
     <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
     <content><![CDATA[<hr>
@@ -562,17 +565,6 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>重新配置hexo，绑定花生壳域名</title>
-    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-    <content><![CDATA[<hr>
-<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
