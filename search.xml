@@ -29,88 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Pve虚拟机使用</title>
-    <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
-    <content><![CDATA[<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p>
-<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
-<ol>
-<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
-<li>写盘工具：win32diskimager_0.9</li>
-</ol>
-<p>安装过程：（略）</p>
-<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
-<p>关键命令：在putty里输入</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>pve</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将代码上传coding备份</title>
-    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
-<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>host文件更新，访问github</title>
-    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
-<hr>
-<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
-<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
-<p>cmd</p>
-<p>ipconfig /flushdns</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows 10激活方法</title>
-    <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
-<h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p>
-<h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol>
-<li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li>
-</ol>
-<p>回车，提示成功安装了产品密钥。</p>
-<ol start="2">
-<li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li>
-<li>输入slmgr /ato激活命令，提示激活成功。</li>
-<li>输入slmgr.vbs -xpr查看是否永久激活。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git 日常使用命令</title>
-    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
-    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
-<li>先git pull origin hexo同步远程仓库</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言基础知识</title>
     <url>/2019/08/29/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识"></a>C语言基础知识</h1><h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><h2 id="一、C语言的数据类型"><a href="#一、C语言的数据类型" class="headerlink" title="一、C语言的数据类型"></a>一、C语言的数据类型</h2><p>计算机要处理的数据（包括数字、文字、符号、图形、音频、视频等）是以二进制的形式存放在内存中的；</p>
@@ -258,6 +176,55 @@
       </tags>
   </entry>
   <entry>
+    <title>Pve虚拟机使用</title>
+    <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p>
+<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
+<ol>
+<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
+<li>写盘工具：win32diskimager_0.9</li>
+</ol>
+<p>安装过程：（略）</p>
+<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
+<p>关键命令：在putty里输入</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>pve</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将代码上传coding备份</title>
+    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
+<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git 日常使用命令</title>
+    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
+    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客主题next安装及配置</title>
     <url>/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hexo 博客主题next安装及配置方法<a id="more"></a></p>
@@ -278,6 +245,39 @@
       <categories>
         <category>hexo</category>
       </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>host文件更新，访问github</title>
+    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
+<hr>
+<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
+<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
+<p>cmd</p>
+<p>ipconfig /flushdns</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows 10激活方法</title>
+    <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
+<h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p>
+<h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol>
+<li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li>
+</ol>
+<p>回车，提示成功安装了产品密钥。</p>
+<ol start="2">
+<li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li>
+<li>输入slmgr /ato激活命令，提示激活成功。</li>
+<li>输入slmgr.vbs -xpr查看是否永久激活。</li>
+</ol>
+]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
@@ -343,22 +343,12 @@
       </tags>
   </entry>
   <entry>
-    <title>学习php笔记1</title>
-    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
-    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于多机同步管理github下的hexo博客</title>
-    <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
-<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+    <title>多机同步管理hexo博客</title>
+    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
 <li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
 </li>
-<li><p>创建两个分支：master 与 hexo；<!--more--></p>
+<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
 </li>
 <li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
 </li>
@@ -394,12 +384,22 @@
       </tags>
   </entry>
   <entry>
-    <title>多机同步管理hexo博客</title>
-    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
-    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+    <title>学习php笔记1</title>
+    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
+    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于多机同步管理github下的hexo博客</title>
+    <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
+<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
 <li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
 </li>
-<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
+<li><p>创建两个分支：master 与 hexo；<!--more--></p>
 </li>
 <li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
 </li>
@@ -511,31 +511,11 @@
       </tags>
   </entry>
   <entry>
-    <title>续网费</title>
-    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
-    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决浪潮服务器启动小白屏问题</title>
     <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p>
 <h1 id="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"><a href="#问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动" class="headerlink" title="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"></a>问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动</h1><p>在原来的系统基础上，安装了Hy虚拟机角色，系统重启出现以上代码提示。</p>
 <h1 id="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"><a href="#原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。" class="headerlink" title="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"></a>原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。</h1><h1 id="解决：通过百度查找问题代码，找到解决方法"><a href="#解决：通过百度查找问题代码，找到解决方法" class="headerlink" title="解决：通过百度查找问题代码，找到解决方法"></a>解决：通过百度查找问题代码，找到解决方法</h1><p>出现0x0000005c蓝屏错误，确定是由x2APIC造成的，进入BIOS的CPU设置选项中，将x2APIC选项设置为disable。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>重新配置hexo，绑定花生壳域名</title>
-    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-    <content><![CDATA[<hr>
-<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
-<hr>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -561,6 +541,17 @@
       </tags>
   </entry>
   <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
+    <content><![CDATA[<hr>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决黑群晖SSH无法启动故障</title>
     <url>/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决黑群晖SSH无法启动故障<a id="more"></a></p>
@@ -575,6 +566,15 @@
 <h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ul>
 <li>在windows 7系统下，用telnet 登陆群晖主机，将ssh默认的配置文件恢复，问题解决</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>续网费</title>
+    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
+    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
