@@ -10,6 +10,16 @@
       </tags>
   </entry>
   <entry>
+    <title>2019暑假记事1</title>
+    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
+    <content><![CDATA[<hr>
+<p>2019暑假如期而至。。。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020年第一文</title>
     <url>/2020/01/05/2020%E5%B9%B4%E7%AC%AC%E4%B8%80%E6%96%87.html/</url>
     <content><![CDATA[<h1 id="车载大屏"><a href="#车载大屏" class="headerlink" title="车载大屏"></a>车载大屏</h1><p>刚刚去调试了下新安装的车载中控大屏，感觉不错。</p>
@@ -19,10 +29,242 @@
       </tags>
   </entry>
   <entry>
-    <title>2019暑假记事1</title>
-    <url>/2019/07/17/2019%E6%9A%91%E5%81%87%E8%AE%B0%E4%BA%8B1.html/</url>
+    <title>将代码上传coding备份</title>
+    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
+<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git 日常使用命令</title>
+    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
+    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>host文件更新，访问github</title>
+    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
+<hr>
+<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
+<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
+<p>cmd</p>
+<p>ipconfig /flushdns</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows 10激活方法</title>
+    <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
+<h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p>
+<h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol>
+<li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li>
+</ol>
+<p>回车，提示成功安装了产品密钥。</p>
+<ol start="2">
+<li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li>
+<li>输入slmgr /ato激活命令，提示激活成功。</li>
+<li>输入slmgr.vbs -xpr查看是否永久激活。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pve虚拟机使用</title>
+    <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
     <content><![CDATA[<hr>
-<p>2019暑假如期而至。。。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p>
+<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
+<ol>
+<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
+<li>写盘工具：win32diskimager_0.9</li>
+</ol>
+<p>安装过程：（略）</p>
+<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
+<p>关键命令：在putty里输入</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>pve</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客主题next安装及配置</title>
+    <url>/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hexo 博客主题next安装及配置方法<a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在hexo博客主目录运行 Git bash，执行下列命令，下载安装next主题。</p>
+<blockquote>
+<p><code>$ git clone https://github.com/theme-next/hexo-theme-next themes/next</code></p>
+</blockquote>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>hexo配置有两个<em>config.yml文件，一个是主目录下的，一个是theme主题目录下的。</em></p>
+<h2 id="博客语言"><a href="#博客语言" class="headerlink" title="博客语言"></a>博客语言</h2><p>_安装next主题后，首先查看next目录下的languages文件夹下的简体中文文件名是什么，如zh-CN.yml，然后，将此名字填入主目录下的_config.yml文件中的language: 位置上，使得next主题支持简体中文。</p>
+<h2 id="next-主题类型选择"><a href="#next-主题类型选择" class="headerlink" title="next 主题类型选择"></a>next 主题类型选择</h2><blockquote>
+<p>Schemes</p>
+<p>#scheme: Muse</p>
+<p>#scheme: Mist</p>
+<p>#scheme: Pisces<br>scheme: Gemini</p>
+</blockquote>
+<p>选用哪个主题类型，即将其前面的#去掉即可。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于多机同步管理github下的hexo博客</title>
+    <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
+<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；<!--more--></p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>先git pull origin hexo同步远程仓库</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo-github搭建免费个个博客详细教程</title>
+    <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
+<h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装记录</title>
+    <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
+    <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小五哥终于可以回家了</title>
+    <url>/2020/01/12/%E5%B0%8F%E4%BA%94%E5%93%A5%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%AE%B6%E4%BA%86.html/</url>
+    <content><![CDATA[<hr>
+<p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习php笔记1</title>
+    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
+    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开启python自带的Http服务</title>
+    <url>/2022/04/04/%E5%BC%80%E5%90%AFpython%E8%87%AA%E5%B8%A6%E7%9A%84Http%E6%9C%8D%E5%8A%A1.html/</url>
+    <content><![CDATA[<p><strong>python2:</strong></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer [port]</span><br></pre></td></tr></table></figure>
+<p><strong>python3:</strong></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">python -m http.server [port]</span><br></pre></td></tr></table></figure>
+<p>后边不跟端口的话 默认端口：<code>8000</code></p>
+]]></content>
+      <tags>
+        <tag>http服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>战疫情，停课不停教</title>
+    <url>/2020/03/05/%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E5%81%9C%E8%AF%BE%E4%B8%8D%E5%81%9C%E6%95%99.html/</url>
+    <content><![CDATA[<hr>
+<p>2020年3月2日，林口县职教中心正式对全校学生开始钉钉平台的线上授课，全体任课教师，积极准备，确保线上授课的效果。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>异地多机多平台同步管理hexo</title>
+    <url>/2019/08/16/%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo.html/</url>
+    <content><![CDATA[<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p>为了方便单位和家同步管理hexo，进行分机设置。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器扩展Synology Download Manager</title>
+    <url>/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浏览器扩展 synology Download Manager安装<a id="more"></a></p>
+<p>分别在Firefox和Opera浏览器中，测试了Synology Download Manager插件，确实好用，可以把下载任务直接添加到群晖的Download套件里。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>续网费</title>
+    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
+    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -176,106 +418,112 @@
       </tags>
   </entry>
   <entry>
-    <title>Pve虚拟机使用</title>
-    <url>/2019/07/23/Pve%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8.html/</url>
+    <title>解决浪潮服务器启动小白屏问题</title>
+    <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p>
+<h1 id="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"><a href="#问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动" class="headerlink" title="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"></a>问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动</h1><p>在原来的系统基础上，安装了Hy虚拟机角色，系统重启出现以上代码提示。</p>
+<h1 id="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"><a href="#原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。" class="headerlink" title="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"></a>原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。</h1><h1 id="解决：通过百度查找问题代码，找到解决方法"><a href="#解决：通过百度查找问题代码，找到解决方法" class="headerlink" title="解决：通过百度查找问题代码，找到解决方法"></a>解决：通过百度查找问题代码，找到解决方法</h1><p>出现0x0000005c蓝屏错误，确定是由x2APIC造成的，进入BIOS的CPU设置选项中，将x2APIC选项设置为disable。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决黑群晖SSH无法启动故障</title>
+    <url>/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决黑群晖SSH无法启动故障<a id="more"></a></p>
+<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><ul>
+<li>黑群晖ssh服务无法启动</li>
+<li>手动开关服务，故障依然存在</li>
+</ul>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><!--more-->
+<ul>
+<li>为了改变root的登陆权限，修改了ssh的相关配置文件，导致ssh服务无法正常开启</li>
+</ul>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ul>
+<li>在windows 7系统下，用telnet 登陆群晖主机，将ssh默认的配置文件恢复，问题解决</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重新配置hexo，绑定花生壳域名</title>
+    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
     <content><![CDATA[<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Pve虚拟机简单使用。<a id="more"></a></p>
-<h1 id="一、Pve虚拟机安装"><a href="#一、Pve虚拟机安装" class="headerlink" title="一、Pve虚拟机安装"></a>一、Pve虚拟机安装</h1><p>工具准备：</p>
-<ol>
-<li>Pve虚拟镜像：proxmox-ve_5.3-2</li>
-<li>写盘工具：win32diskimager_0.9</li>
+<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
+    <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>黑群晖下，如何搭建免费影视在线点播平台。<a id="more"></a></p>
+<h2 id="一、下载网站源码"><a href="#一、下载网站源码" class="headerlink" title="一、下载网站源码"></a>一、下载网站源码</h2><ol>
+<li>下载苹果CMS网点平台源码：<a href="http://www.maccmsv10.com/" target="_blank" rel="noopener">苹果CMS官网</a>  <a href="https://www.lanzous.com/iadrj9i" target="_blank" rel="noopener">备用地址</a></li>
+<li>萌芽采集插件：<a href="https://www.lanzous.com/iadya3a" target="_blank" rel="noopener">免费版3.0</a></li>
 </ol>
-<p>安装过程：（略）</p>
-<h1 id="二、Pve下群晖安装"><a href="#二、Pve下群晖安装" class="headerlink" title="二、Pve下群晖安装"></a>二、Pve下群晖安装</h1><p><a href="https://post.smzdm.com/p/a25r8mo2/" target="_blank" rel="noopener">引用安装过程链接</a></p>
-<p>关键命令：在putty里输入</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">chmod +x img2kvm</span><br><span class="line"></span><br><span class="line">./img2kvm synoboot.img <span class="number">104</span> vm<span class="number">-104</span>-disk<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、群晖安装步骤"><a href="#二、群晖安装步骤" class="headerlink" title="二、群晖安装步骤"></a>二、群晖安装步骤</h2><ol>
+<li>在群晖的web目录下新一个子目录（名字随意），然后，将苹果CMS源码上传到些目录下，解压。</li>
+<li>将萌芽采集插件解压后，上传到addons目录下。</li>
+<li>其他过程（略）</li>
+</ol>
 ]]></content>
-      <categories>
-        <category>pve</category>
-      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本机无法访问 ghithub.io问题分析</title>
+    <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p>
+<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>
+]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
-    <title>将代码上传coding备份</title>
-    <url>/2019/08/17/coding%E6%B5%8B%E8%AF%95.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>将代码上传coding备份<a id="more"></a></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>为了将博客的源文件放在coding.me上进行备份</p>
-<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>在coding.me上新建分支hexo且设为默认分支，clone此分支，将除了.git目录外的其他文件删除，复制博客的备份文件过来。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git 日常使用命令</title>
-    <url>/2019/07/07/git-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4.html/</url>
-    <content><![CDATA[<h1 id="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"><a href="#在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。" class="headerlink" title="在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。"></a>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</h1><ol>
+    <title>多机同步管理hexo博客</title>
+    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
+    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
+</li>
+<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
+</li>
+<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
+</li>
+<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
+</li>
+<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
+</li>
+<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
+</li>
+<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
+<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
+</li>
+</ol>
+<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
 <li>先git pull origin hexo同步远程仓库</li>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
 <li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客主题next安装及配置</title>
-    <url>/2019/04/22/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98next%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hexo 博客主题next安装及配置方法<a id="more"></a></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在hexo博客主目录运行 Git bash，执行下列命令，下载安装next主题。</p>
-<blockquote>
-<p><code>$ git clone https://github.com/theme-next/hexo-theme-next themes/next</code></p>
-</blockquote>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>hexo配置有两个<em>config.yml文件，一个是主目录下的，一个是theme主题目录下的。</em></p>
-<h2 id="博客语言"><a href="#博客语言" class="headerlink" title="博客语言"></a>博客语言</h2><p>_安装next主题后，首先查看next目录下的languages文件夹下的简体中文文件名是什么，如zh-CN.yml，然后，将此名字填入主目录下的_config.yml文件中的language: 位置上，使得next主题支持简体中文。</p>
-<h2 id="next-主题类型选择"><a href="#next-主题类型选择" class="headerlink" title="next 主题类型选择"></a>next 主题类型选择</h2><blockquote>
-<p>Schemes</p>
-<p>#scheme: Muse</p>
-<p>#scheme: Mist</p>
-<p>#scheme: Pisces<br>scheme: Gemini</p>
-</blockquote>
-<p>选用哪个主题类型，即将其前面的#去掉即可。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>host文件更新，访问github</title>
-    <url>/2020/03/06/host%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%EF%BC%8C%E8%AE%BF%E9%97%AEgithub.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>host文件更新，解决不能访问github问题。<a id="more"></a></p>
-<hr>
-<h1 id="1、修改host文件内容，添加如下内容"><a href="#1、修改host文件内容，添加如下内容" class="headerlink" title="1、修改host文件内容，添加如下内容"></a>1、修改host文件内容，添加如下内容</h1><p>192.30.253.113     github.com<br>185.199.108.153    github.github.io<br>151.101.72.133     assets-cdn.github.com<br>151.101.185.194    github.global.ssl.fastly.net</p>
-<h1 id="2、清除DNS解析程序缓存"><a href="#2、清除DNS解析程序缓存" class="headerlink" title="2、清除DNS解析程序缓存"></a>2、清除DNS解析程序缓存</h1><p>win + r</p>
-<p>cmd</p>
-<p>ipconfig /flushdns</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows 10激活方法</title>
-    <url>/2019/05/09/windows-10%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>windows 10激活方法<a id="more"></a></p>
-<h1 id="查看激活状态"><a href="#查看激活状态" class="headerlink" title="查看激活状态"></a>查看激活状态</h1><p>管理员权限打开windows powershell，输入slmgr.vbs -xpr，回车确认。</p>
-<h1 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h1><ol>
-<li>右击开始，打开Windows powershall（管理员）输入slmgr /ipk P9C2R-NM3BW-JR7DG-2R38J-D9MPF</li>
-</ol>
-<p>回车，提示成功安装了产品密钥。</p>
-<ol start="2">
-<li>输入slmgr /skms kms.xspace.in设置激活名称，回车。</li>
-<li>输入slmgr /ato激活命令，提示激活成功。</li>
-<li>输入slmgr.vbs -xpr查看是否永久激活。</li>
 </ol>
 ]]></content>
       <tags>
@@ -328,254 +576,6 @@
       <categories>
         <category>server</category>
       </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo-github搭建免费个个博客详细教程</title>
-    <url>/2019/04/11/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%B8%AA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客教程<a id="more"></a></p>
-<h3 id="使用github-pages服务搭建博客的好处有："><a href="#使用github-pages服务搭建博客的好处有：" class="headerlink" title="使用github pages服务搭建博客的好处有："></a>使用github pages服务搭建博客的好处有：</h3><p>​    1. 全是静态文件，访问速度快；<br>​    2. 免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；<br>​    3. 可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；<br>​    4. 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；<br>​    5. 博客内容可以轻松打包、转移、发布到其它平台；<br>​    6. 等等；<br>以下过程引用 小茗同学发表的 <a href="http://blog.liuxianan.com/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a> </p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于多机同步管理github下的hexo博客</title>
-    <url>/2019/07/07/%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86github%E4%B8%8B%E7%9A%84hexo%E5%8D%9A%E5%AE%A2.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>关于多机同下管理github下的hexo博客问题<a id="more"></a></p>
-<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
-<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
-</li>
-<li><p>创建两个分支：master 与 hexo；<!--more--></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
-</li>
-<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
-</li>
-<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
-</li>
-<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
-</li>
-<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
-</li>
-<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
-</li>
-<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
-<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
-</li>
-<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
-</li>
-</ol>
-<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
-<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>先git pull origin hexo同步远程仓库</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多机同步管理hexo博客</title>
-    <url>/2022/04/01/%E5%A4%9A%E6%9C%BA%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2.html/</url>
-    <content><![CDATA[<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
-<li><p>创建仓库，\&lt; your github username &gt;.github.io；可参考我的<a href="https://github.com/tracy-talent/tracy-talent.github.io" target="_blank" rel="noopener">tracy-talent.github.io</a></p>
-</li>
-<li><p>创建两个分支：master 与 hexo；<a id="more"></a></p>
-</li>
-<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件,git clone会download默认分支）；</p>
-</li>
-<li><p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/username.github.io.git拷贝仓库；</p>
-</li>
-<li><p>在本地username.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p>
-</li>
-<li><p>修改_config.yml中的deploy参数，分支应为master；</p>
-</li>
-<li><p>下载hexo主题，推荐使用next，先fork一份<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>到自己账号上(主要为了方便自己后期对主题的定制)，然后进入到themes目录下执行git submodule add <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/hexo-theme-next.git将fork的next主题仓库download下来作为当前博客主仓库的子模块，这时username.github.io目录下会多出一个.gitmodules的文件(里面存储着所有子模块的文件路径和url)，然后进入到hexo-theme-next主题目录下，使用git branch -a查看当前子模块所出的分支，确保在主分支master上，然后git pull origin master使得子模块与远程保持一致，接着在进入到博客根目录username.github.io下，依次git add、git commit、git push提交到github hexo分支；</p>
-</li>
-<li><p>网页端进入到username.github.io仓库下可以看到themes目录下hexo-theme-next存的是指向你fork的hexo-theme-next仓库最新commit id的指针，而不是实实在在的文件内容，点击之后会跳转到子仓库，github这样做也是为了节省存储开销</p>
-</li>
-<li><p>后期如果对主题自定义，每次修改完之后确保将主题模块切换到master分支，然后提交修改。再回到博客主目录下提交修改，更新主线(hexo分支)指向子模块的指针，这样才能将第三方库即子模块同步到主线上，使得主线上指向子模块的指针对应的永远是子模块最新的commit id</p>
-</li>
-<li><p>这时候如果想在另一台机器上同步部署博客，那么需要先安装npm，然后新建一个目录例如hexo(因为hexo初始化必须是一个空目录)，在hexo目录下依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git，然后退出hexo目录执行</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.gitgit</span> submodule init &amp;&amp; git submodule update#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`git clone git@github<span class="selector-class">.com</span>:username/username<span class="selector-class">.github</span><span class="selector-class">.io</span><span class="selector-class">.git</span> --recursive</span><br></pre></td></tr></table></figure>
-<p>download完成之后将username.github.io目录下所有内容copy到hexo目录下，然后进入到hexo\themes\hexo-theme-next目录下，执行git checkout master切换到子模块的master分支上，执行git pull origin master同步子模块与远程子仓库，到此就实现了在另一台机器上与远程完全同步的工作了，可以在这台机器上写博客发表文章了，记得每次在不同机器作业时先在博客主目录下git pull origin master同步commit之后再开始写博客发表。</p>
-</li>
-<li><p>执行hexo g -d生成网站并部署到GitHub上。</p>
-</li>
-</ol>
-<p>这样一来，在GitHub上的username.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
-<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>先git pull origin hexo同步远程仓库</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习php笔记1</title>
-    <url>/2019/06/11/%E5%AD%A6%E4%B9%A0php%E7%AC%94%E8%AE%B01.html/</url>
-    <content><![CDATA[<h1 id="变量的声明与屏幕输出"><a href="#变量的声明与屏幕输出" class="headerlink" title="变量的声明与屏幕输出"></a>变量的声明与屏幕输出</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小五哥终于可以回家了</title>
-    <url>/2020/01/12/%E5%B0%8F%E4%BA%94%E5%93%A5%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%AE%B6%E4%BA%86.html/</url>
-    <content><![CDATA[<hr>
-<p>小五哥已经在沈阳住院好久了，2020即将到来，终于可以回家了，愿一切的不顺都成过往，安康顺意！</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装记录</title>
-    <url>/2019/04/10/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.html/</url>
-    <content><![CDATA[<p>在单位安装完Hexo后，用手机数据方式能够正常访问，下班回到家中，用家中的Wifi和电脑都能正常访问。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开启python自带的Http服务</title>
-    <url>/2022/04/04/%E5%BC%80%E5%90%AFpython%E8%87%AA%E5%B8%A6%E7%9A%84Http%E6%9C%8D%E5%8A%A1.html/</url>
-    <content><![CDATA[<p><strong>python2:</strong></p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer [port]</span><br></pre></td></tr></table></figure>
-<p><strong>python3:</strong></p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">python -m http.server [port]</span><br></pre></td></tr></table></figure>
-<p>后边不跟端口的话 默认端口：<code>8000</code></p>
-]]></content>
-      <tags>
-        <tag>http服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>异地多机多平台同步管理hexo</title>
-    <url>/2019/08/16/%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo.html/</url>
-    <content><![CDATA[<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p>为了方便单位和家同步管理hexo，进行分机设置。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>战疫情，停课不停教</title>
-    <url>/2020/03/05/%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E5%81%9C%E8%AF%BE%E4%B8%8D%E5%81%9C%E6%95%99.html/</url>
-    <content><![CDATA[<hr>
-<p>2020年3月2日，林口县职教中心正式对全校学生开始钉钉平台的线上授课，全体任课教师，积极准备，确保线上授课的效果。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>本机无法访问 ghithub.io问题分析</title>
-    <url>/2019/04/15/%E6%9C%AC%E6%9C%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE-ghithub-io%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>莫名原因，无法访问githu.io的问题。<a id="more"></a></p>
-<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><p>成功架设了hexo博客，手机和其他的电脑主机都能正常访问&lt;用户名&gt;.github.io，本机却无法访问。</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>本机无法访问 &lt;用户名&gt;.github.io问题，故障已经查明，原来是安装了<strong>净网大师</strong>的原因，停止运行它，就可以正常访问了。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>续网费</title>
-    <url>/2019/07/08/%E7%BB%AD%E7%BD%91%E8%B4%B9.html/</url>
-    <content><![CDATA[<h1 id="续网费"><a href="#续网费" class="headerlink" title="续网费"></a>续网费</h1><p>今天到网通大厅续了下家里用的宽带费用，3年共1080元，将原来的100M带宽提升为上行30M下行200M。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器扩展Synology Download Manager</title>
-    <url>/2019/04/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95Synology-Download-Manager.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浏览器扩展 synology Download Manager安装<a id="more"></a></p>
-<p>分别在Firefox和Opera浏览器中，测试了Synology Download Manager插件，确实好用，可以把下载任务直接添加到群晖的Download套件里。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决浪潮服务器启动小白屏问题</title>
-    <url>/2019/04/28/%E8%A7%A3%E5%86%B3%E6%B5%AA%E6%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%B0%8F%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决浪潮服务器启动小白屏问题<a id="more"></a></p>
-<h1 id="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"><a href="#问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动" class="headerlink" title="问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动"></a>问题：浪潮服务器启动出现0x0000005c错误代码，系统无法启动</h1><p>在原来的系统基础上，安装了Hy虚拟机角色，系统重启出现以上代码提示。</p>
-<h1 id="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"><a href="#原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。" class="headerlink" title="原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。"></a>原因：因为安装了虚拟机角色，可能受系统CPU的设置影响，导致了出现问题代码。</h1><h1 id="解决：通过百度查找问题代码，找到解决方法"><a href="#解决：通过百度查找问题代码，找到解决方法" class="headerlink" title="解决：通过百度查找问题代码，找到解决方法"></a>解决：通过百度查找问题代码，找到解决方法</h1><p>出现0x0000005c蓝屏错误，确定是由x2APIC造成的，进入BIOS的CPU设置选项中，将x2APIC选项设置为disable。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>重新配置hexo，绑定花生壳域名</title>
-    <url>/2020/03/06/%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEhexo%EF%BC%8C%E7%BB%91%E5%AE%9A%E8%8A%B1%E7%94%9F%E5%A3%B3%E5%9F%9F%E5%90%8D.html/</url>
-    <content><![CDATA[<hr>
-<p>由于，托管服务coding升级，所以重新对hexo进行配置，绑定了私有域名（花生壳），测试效果。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑群晖下搭建苹果CMS免费影视在线点播平台</title>
-    <url>/2020/03/20/%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%8B%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9CCMS%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E5%9C%A8%E7%BA%BF%E7%82%B9%E6%92%AD%E5%B9%B3%E5%8F%B0.html/</url>
-    <content><![CDATA[<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>黑群晖下，如何搭建免费影视在线点播平台。<a id="more"></a></p>
-<h2 id="一、下载网站源码"><a href="#一、下载网站源码" class="headerlink" title="一、下载网站源码"></a>一、下载网站源码</h2><ol>
-<li>下载苹果CMS网点平台源码：<a href="http://www.maccmsv10.com/" target="_blank" rel="noopener">苹果CMS官网</a>  <a href="https://www.lanzous.com/iadrj9i" target="_blank" rel="noopener">备用地址</a></li>
-<li>萌芽采集插件：<a href="https://www.lanzous.com/iadya3a" target="_blank" rel="noopener">免费版3.0</a></li>
-</ol>
-<h2 id="二、群晖安装步骤"><a href="#二、群晖安装步骤" class="headerlink" title="二、群晖安装步骤"></a>二、群晖安装步骤</h2><ol>
-<li>在群晖的web目录下新一个子目录（名字随意），然后，将苹果CMS源码上传到些目录下，解压。</li>
-<li>将萌芽采集插件解压后，上传到addons目录下。</li>
-<li>其他过程（略）</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决黑群晖SSH无法启动故障</title>
-    <url>/2019/04/16/%E8%A7%A3%E5%86%B3%E9%BB%91%E7%BE%A4%E6%99%96SSH%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%95%85%E9%9A%9C.html/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>解决黑群晖SSH无法启动故障<a id="more"></a></p>
-<h1 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h1><ul>
-<li>黑群晖ssh服务无法启动</li>
-<li>手动开关服务，故障依然存在</li>
-</ul>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><!--more-->
-<ul>
-<li>为了改变root的登陆权限，修改了ssh的相关配置文件，导致ssh服务无法正常开启</li>
-</ul>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ul>
-<li>在windows 7系统下，用telnet 登陆群晖主机，将ssh默认的配置文件恢复，问题解决</li>
-</ul>
-]]></content>
       <tags>
         <tag>随笔</tag>
       </tags>
